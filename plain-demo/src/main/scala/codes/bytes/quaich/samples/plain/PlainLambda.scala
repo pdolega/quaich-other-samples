@@ -13,7 +13,6 @@ import scala.util.Random
 class PlainLambda extends DirectLambdaHandler {
 
   val randomValue = Random.nextLong()
-  val creationTime = System.currentTimeMillis()
 
   var value = 0
 
@@ -22,7 +21,7 @@ class PlainLambda extends DirectLambdaHandler {
     value = value + 1
 
     writeJson(output, s"Success returned from request: ${ctx.awsRequestId}. " +
-      s"Random value is: ${randomValue} (creation: ${creationTime}) " +
+      s"Random value is: ${randomValue} " +
       s"remaining ms: ${ctx.remainingTimeInMillis} ms " +
       s"VALUE IS: ${value}")
   }
